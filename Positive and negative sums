@@ -1,0 +1,18 @@
+def pos_neg_sums(*args):
+    neg_sum = 0
+    pos_sum = 0
+    for num in args:
+        if num < 0:
+            neg_sum += num
+        else:
+            pos_sum += num
+    return neg_sum, pos_sum
+
+
+numbers = [int(x) for x in input().split()]
+print(pos_neg_sums(*numbers)[0])
+print(pos_neg_sums(*numbers)[1])
+if abs(pos_neg_sums(*numbers)[0]) > pos_neg_sums(*numbers)[1]:
+    print("The negatives are stronger than the positives")
+elif pos_neg_sums(*numbers)[1] > abs(pos_neg_sums(*numbers)[0]):
+    print("The positives are stronger than the negatives")
